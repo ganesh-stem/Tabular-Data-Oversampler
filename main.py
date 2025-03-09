@@ -113,7 +113,7 @@ class DataOversampler:
     def apply_monte_carlo_simulation(self, df_minority, float_columns, categorical_columns):
         df_sampled = pd.DataFrame()
         for _ in range(self.num_simulations):
-            if self.strategy == 'monte_carlo':
+            if self.strategy == 'simple':
                 df_simulated = self.monte_carlo_oversampler(df_minority, float_columns, categorical_columns)
             elif self.strategy == 'bsm':
                 df_simulated = self.bsm_oversampler(df_minority, float_columns, categorical_columns)
